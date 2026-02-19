@@ -1,14 +1,10 @@
 #!/bin/bash
 
-echo "Installing NetBird service..."
-netbird service install
-
 echo "Starting NetBird service..."
 netbird service start
 
-echo "Starting NetBird client..."
-netbird up
+echo "Starting NetBird client with setup key..."
+netbird up --setup-key "$NETBIRD_SETUP_KEY"
 
 echo "Keeping container alive..."
 tail -f /dev/null
-
